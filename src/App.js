@@ -7,6 +7,14 @@ const messages = [
 function App() {
   const step = 1;
 
+  function handlePrevious() {
+    alert("Previous");
+  }
+
+  function handleNext() {
+    alert("Next");
+  }
+
   return (
     <div className="steps">
       <div className="numbers">
@@ -23,6 +31,8 @@ function App() {
             backgroundColor: "#7950f2",
             color: "#fff"
           }}
+          onClick={handlePrevious}
+          // onMouseEnter={() => alert("Mouse")}
         >
           Previous
         </button>
@@ -31,6 +41,7 @@ function App() {
             backgroundColor: "#7950f2",
             color: "#fff"
           }}
+          onClick={handleNext}
         >
           Next
         </button>
