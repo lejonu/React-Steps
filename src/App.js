@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const messages = [
   "Learn React ⚛️",
   "Apply for jobs 💼",
@@ -5,14 +7,16 @@ const messages = [
 ];
 
 function App() {
-  const step = 1;
+  // a hook only can be used in the top level of the component function
+  // not inside a if statement or inside another function o inside aloop
+  const [step, setStep] = useState(1);
 
   function handlePrevious() {
-    alert("Previous");
+    if (step > 1) setStep(step => step - 1);
   }
 
   function handleNext() {
-    alert("Next");
+    if (step < 3) setStep(step => step + 1);
   }
 
   return (
